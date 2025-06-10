@@ -21,10 +21,15 @@
        data-size="large">
   </div>
   <div id="userInfo" style="margin-top:2em;"></div>
+  <button id="continueBtn" style="display:none; margin-top:1em;">Continue to ShambaHub</button>
   <script>
     function onGoogleSignIn(response) {
-      // Optional: Save JWT or send a postMessage to parent iFrame
       document.getElementById('userInfo').innerHTML = "<b>Login successful!</b>";
+      document.getElementById('continueBtn').style.display = "block";
+    }
+    document.getElementById('continueBtn').onclick = function() {
+      // Redirect to your Experience Builder app
+      window.top.location.href = "https://experience.arcgis.com/experience/fc7581fef493414f8c3eccffb505e69c";
     }
   </script>
 </body>
